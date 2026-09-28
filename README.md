@@ -7,6 +7,7 @@
 <p align="center">
   <a href="https://folio.sarl">Live demo</a> ·
   <a href="#product-capabilities">Features</a> ·
+  <a href="#system-architecture">Architecture</a> ·
   <a href="#demo-files">Demo files</a> ·
   <a href="#source-code">Source code</a>
 </p>
@@ -80,6 +81,14 @@ The [`sample-files` guide](sample-files/README.md) includes two small, synthetic
 
 Each scenario lists the matching company, period, upload order, and amounts in the [usage notes](sample-files/README.md). AI results can vary; these files demonstrate the workflow, not a measured accuracy claim.
 
+## System architecture
+
+[![Folio system architecture: client and accountant browsers, Cloudflare, Nginx, Vue frontend, FastAPI backend and Worker, PostgreSQL, Redis, document volume, AI Agent, and model services](assets/system-architecture.svg)](assets/system-architecture.svg)
+
+*Select the diagram to view it at full size.*
+
+The Vue frontend serves client and firm workspaces. FastAPI owns authentication, requests, review state, and business writes; a separate Worker scans documents and runs asynchronous AI tasks. PostgreSQL stores business records and Worker leases, while Redis holds revocable sessions and rate-limit state. The read-only Agent performs OCR and analysis; the Backend validates searches, evidence, and monetary relationships before applying an allowed decision.
+
 ## Source code
 
 Folio's application is split into three independently maintained repositories. **This repository** holds the project overview and demo materials.
@@ -89,8 +98,6 @@ Folio's application is split into three independently maintained repositories. *
 | Web app | [acc-system-frontend](https://github.com/multi-mind-nus/acc-system-frontend) | Vue 3 firm and client workspaces |
 | Business service | [acc-system-backend](https://github.com/multi-mind-nus/acc-system-backend) | FastAPI, authorization, workflow state, worker, and deployment |
 | AI service | [acc-system-agent](https://github.com/multi-mind-nus/acc-system-agent) | File reading, OCR, classification, and structured review |
-
-PostgreSQL stores business records and worker leases. Redis holds revocable session and rate-limit state. The Agent cannot directly change business state; the backend checks searches, evidence, and monetary relationships before applying an allowed decision.
 
 <details>
 <summary><strong>Run the stack locally</strong></summary>
