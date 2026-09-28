@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Folio hero artwork</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { width: 1600px; height: 900px; margin: 0; overflow: hidden; }
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #142f29; }
+  .poster { display: grid; grid-template-columns: 760px 840px; width: 1600px; height: 900px; }
+  .editorial { background: #f6f5ef; padding: 72px 74px 76px 96px; display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 15px; height: 60px; }
+  .mark { width: 55px; height: 55px; border-radius: 15px; background: #173f32; color: #f6f5ef; display: grid; place-items: center; font-size: 36px; font-weight: 750; line-height: 1; }
+  .brand-name { font-size: 38px; font-weight: 720; letter-spacing: -2.5px; }
+  .hero-copy { margin-top: 126px; }
+  .eyebrow { color: #36775b; font-size: 17px; font-weight: 760; letter-spacing: 3.2px; text-transform: uppercase; }
+  h1 { margin: 29px 0 0; font-size: 66px; line-height: 1.1; letter-spacing: -4px; font-weight: 740; }
+  h1 span { color: #247252; font-family: Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: -4px; }
+  .description { max-width: 575px; margin: 33px 0 0; color: #50665d; font-size: 24px; line-height: 1.45; letter-spacing: -.4px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: auto; padding-top: 25px; border-top: 1px solid #cdd9ce; }
+  .step-number { color: #317559; font-size: 16px; font-weight: 760; letter-spacing: 2px; }
+  .step-label { margin-top: 8px; font-size: 22px; font-weight: 660; letter-spacing: -.4px; }
+  .visual { position: relative; overflow: hidden; background: #174332; display: grid; place-items: center; }
+  .visual::before { content: ""; position: absolute; width: 1050px; height: 1050px; border: 1px solid rgba(231,248,223,.15); border-radius: 50%; left: 210px; top: -495px; }
+  .visual::after { content: ""; position: absolute; width: 740px; height: 740px; border: 1px solid rgba(231,248,223,.14); border-radius: 50%; left: -370px; top: 520px; }
+  .visual-label { position: absolute; top: 76px; left: 93px; color: #b9dbc4; font-size: 15px; letter-spacing: 3px; font-weight: 730; }
+  .window { z-index: 1; width: 652px; border-radius: 23px; background: #ffffff; box-shadow: 0 30px 65px rgba(4,32,21,.26); overflow: hidden; }
+  .window-top { height: 71px; padding: 0 31px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e7ece7; }
+  .window-brand { display: flex; align-items: center; gap: 11px; font-size: 21px; font-weight: 700; letter-spacing: -.5px; }
+  .window-mark { width: 28px; height: 28px; border-radius: 8px; background: #173f32; color: white; display: grid; place-items: center; font-size: 19px; font-weight: 700; }
+  .window-section { color: #788d80; font-size: 15px; font-weight: 600; }
+  .window-body { padding: 30px 32px 26px; }
+  .request-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+  .overline { color: #6a8b77; font-size: 13px; font-weight: 760; letter-spacing: 2px; }
+  .request-title { margin: 8px 0 5px; font-size: 30px; font-weight: 720; letter-spacing: -1px; }
+  .request-subtitle { color: #6f7e74; font-size: 16px; }
+  .status { margin-top: 4px; border-radius: 999px; background: #e4f3e7; color: #207451; padding: 9px 15px; white-space: nowrap; font-size: 13px; font-weight: 750; letter-spacing: .7px; }
+  .progress { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: 30px 0 15px; }
+  .progress i { height: 6px; border-radius: 5px; background: #278455; }
+  .progress i:last-child { background: #dce9dd; }
+  .progress-labels { display: flex; justify-content: space-between; color: #7d8c81; font-size: 13px; }
+  .progress-labels b { color: #297a54; font-weight: 750; }
+  .requirements { margin-top: 30px; border: 1px solid #e5ebe6; border-radius: 15px; overflow: hidden; }
+  .requirement { display: flex; align-items: center; gap: 15px; height: 68px; padding: 0 18px; border-bottom: 1px solid #e9eee9; }
+  .requirement:last-child { border-bottom: 0; }
+  .file-icon { width: 36px; height: 39px; border-radius: 9px; background: #eaf4eb; color: #2e8058; display: grid; place-items: center; font-size: 19px; font-weight: 760; }
+  .file-name { font-size: 17px; font-weight: 640; flex: 1; }
+  .file-state { font-size: 14px; color: #40805c; font-weight: 650; }
+  .insight { display: flex; align-items: center; gap: 15px; margin-top: 22px; padding: 19px 20px; background: #eef6ee; border-radius: 15px; }
+  .insight-check { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #cde8d2; color: #23714f; font-size: 23px; font-weight: 760; }
+  .insight strong { display: block; font-size: 17px; color: #22583e; }
+  .insight small { display: block; margin-top: 3px; font-size: 14px; color: #63816b; }
+  .window-bottom { display: flex; align-items: center; justify-content: space-between; height: 58px; padding: 0 32px; border-top: 1px solid #e7ece7; color: #728276; font-size: 14px; }
+  .human { display: flex; align-items: center; gap: 9px; color: #315d46; font-weight: 670; }
+  .human-dot { width: 8px; height: 8px; border-radius: 50%; background: #3eae70; }
+</style>
+<main class="poster">
+  <section class="editorial">
+    <div class="brand"><div class="mark">F</div><div class="brand-name">folio</div></div>
+    <div class="hero-copy">
+      <div class="eyebrow">AI document collection for accounting firms</div>
+      <h1>Collect client files.<br><span>Find what's missing.</span></h1>
+      <p class="description">Accountants request invoices, receipts, and bank statements. Clients upload them. Folio checks the files and explains any missing or mismatched evidence.</p>
+    </div>
+    <div class="steps">
+      <div><div class="step-number">01 /</div><div class="step-label">Request</div></div>
+      <div><div class="step-number">02 /</div><div class="step-label">Upload</div></div>
+      <div><div class="step-number">03 /</div><div class="step-label">Review</div></div>
+    </div>
+  </section>
+  <section class="visual">
+    <div class="visual-label">EXAMPLE · NOVEMBER 2026</div>
+    <div class="window">
+      <div class="window-top"><div class="window-brand"><div class="window-mark">F</div>folio</div><div class="window-section">Collection workspace</div></div>
+      <div class="window-body">
+        <div class="request-heading">
+          <div><div class="overline">DOCUMENT REQUEST</div><div class="request-title">November 2026 records</div><div class="request-subtitle">Keystone Projects Solutions Pte. Ltd.</div></div>
+          <div class="status">IN REVIEW</div>
+        </div>
+        <div class="progress"><i></i><i></i><i></i></div>
+        <div class="progress-labels"><span>Requested</span><b>Submitted</b><span>Accountant review</span></div>
+        <div class="requirements">
+          <div class="requirement"><div class="file-icon">≡</div><div class="file-name">Bank statement</div><div class="file-state">Received</div></div>
+          <div class="requirement"><div class="file-icon">≡</div><div class="file-name">Expense claim</div><div class="file-state">Received</div></div>
+          <div class="requirement"><div class="file-icon">≡</div><div class="file-name">3 supporting receipts</div><div class="file-state">Received</div></div>
+        </div>
+        <div class="insight"><div class="insight-check">✓</div><div><strong>3 receipts match the SGD 341.20 claim</strong><small>Accountant review is still required</small></div></div>
+      </div>
+      <div class="window-bottom"><span>Illustrative request</span><span class="human"><span class="human-dot"></span>Accountant confirms completion</span></div>
+    </div>
+  </section>
+</main>
+</html>
