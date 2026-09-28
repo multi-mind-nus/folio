@@ -6,6 +6,7 @@
 <p align="center"><strong>AI-assisted document collection and review for accounting firms.</strong></p>
 <p align="center">
   <a href="https://folio.sarl">Live demo</a> ·
+  <a href="https://youtu.be/5iFuHVI3PFA">Video</a> ·
   <a href="#product-capabilities">Features</a> ·
   <a href="#system-architecture">Architecture</a> ·
   <a href="#demo-files">Demo files</a> ·
@@ -131,11 +132,9 @@ Open `http://localhost` and sign in with the bootstrap account configured locall
 
 | Deliverable | Availability |
 | :--- | :--- |
-| Business Proposal | Final PDF will be added here when complete. |
-| Technical Document | Final PDF will be added here when complete. |
-| YouTube demonstration | Video link will be added here after recording. |
-
-<!-- Add final PDFs under docs/ and replace the rows above with links; add the YouTube URL when ready. -->
+| Business Proposal | [Read the PDF](docs/Folio-Business-Proposal.pdf) |
+| Technical Document | [Read the PDF](docs/Folio-Technical-Document.pdf) |
+| YouTube demonstration | [Watch the video](https://youtu.be/5iFuHVI3PFA) |
 
 ## Team
 
