@@ -88,7 +88,7 @@ Each scenario lists the matching company, period, upload order, and amounts in t
 
 *Select the diagram to view it at full size.*
 
-The Vue frontend serves client and firm workspaces. FastAPI owns authentication, requests, review state, and business writes; a separate Worker scans documents and runs asynchronous AI tasks. PostgreSQL stores business records and Worker leases, while Redis holds revocable sessions and rate-limit state. The read-only Agent performs OCR and analysis; the Backend validates searches, evidence, and monetary relationships before applying an allowed decision.
+The Vue frontend serves client and firm workspaces. FastAPI owns authentication, requests, review state, and business writes; a separate Worker scans documents and runs asynchronous AI tasks. PostgreSQL stores business records and Worker leases, while Redis holds revocable sessions and rate-limit state. The read-only Agent uses DeepSeek-OCR-2 for OCR and Folio-Reasoner-8B for document analysis; its model interface also supports compatible inference services. The Backend validates searches, evidence, and monetary relationships before applying an allowed decision.
 
 ## Source code
 
