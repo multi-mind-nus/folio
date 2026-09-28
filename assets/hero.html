@@ -9,7 +9,7 @@
   .poster { display: grid; grid-template-columns: 760px 840px; width: 1600px; height: 900px; }
   .editorial { background: #f6f5ef; padding: 72px 74px 76px 96px; display: flex; flex-direction: column; }
   .brand { display: flex; align-items: center; gap: 15px; height: 60px; }
-  .mark { width: 55px; height: 55px; border-radius: 15px; background: #173f32; color: #f6f5ef; display: grid; place-items: center; font-size: 36px; font-weight: 750; line-height: 1; }
+  .mark { width: 55px; height: 55px; display: block; }
   .brand-name { font-size: 38px; font-weight: 720; letter-spacing: -2.5px; }
   .hero-copy { margin-top: 126px; }
   .eyebrow { color: #36775b; font-size: 17px; font-weight: 760; letter-spacing: 3.2px; text-transform: uppercase; }
@@ -26,7 +26,7 @@
   .window { z-index: 1; width: 652px; border-radius: 23px; background: #ffffff; box-shadow: 0 30px 65px rgba(4,32,21,.26); overflow: hidden; }
   .window-top { height: 71px; padding: 0 31px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e7ece7; }
   .window-brand { display: flex; align-items: center; gap: 11px; font-size: 21px; font-weight: 700; letter-spacing: -.5px; }
-  .window-mark { width: 28px; height: 28px; border-radius: 8px; background: #173f32; color: white; display: grid; place-items: center; font-size: 19px; font-weight: 700; }
+  .window-mark { width: 28px; height: 28px; display: block; }
   .window-section { color: #788d80; font-size: 15px; font-weight: 600; }
   .window-body { padding: 30px 32px 26px; }
   .request-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
@@ -55,7 +55,7 @@
 </style>
 <main class="poster">
   <section class="editorial">
-    <div class="brand"><div class="mark">F</div><div class="brand-name">folio</div></div>
+    <div class="brand"><img class="mark" src="folio-icon.png" alt=""><div class="brand-name">folio</div></div>
     <div class="hero-copy">
       <div class="eyebrow">AI document collection for accounting firms</div>
       <h1>Collect client files.<br><span>Find what's missing.</span></h1>
@@ -70,7 +70,7 @@
   <section class="visual">
     <div class="visual-label">EXAMPLE · NOVEMBER 2026</div>
     <div class="window">
-      <div class="window-top"><div class="window-brand"><div class="window-mark">F</div>folio</div><div class="window-section">Collection workspace</div></div>
+      <div class="window-top"><div class="window-brand"><img class="window-mark" src="folio-icon.png" alt="">folio</div><div class="window-section">Collection workspace</div></div>
       <div class="window-body">
         <div class="request-heading">
           <div><div class="overline">DOCUMENT REQUEST</div><div class="request-title">November 2026 records</div><div class="request-subtitle">Keystone Projects Solutions Pte. Ltd.</div></div>
